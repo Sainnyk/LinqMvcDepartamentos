@@ -1,0 +1,29 @@
+﻿@model List<Departamento>
+
+<h1> Listado de departamentos</h1>
+<hr />
+
+@if(Model != null){
+    <table class="table-info">
+    <thead>
+        <tr>
+            <th> Id </th>
+            <th> Nombre</th>
+            <th> Localidad </th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(Departamento dept in Model)
+        {
+            <tr>
+                <td>@dept.IdDept</td>
+                <td>@dept.NombreDept</td>
+                <td>@dept.LocalidadDept</td>
+                <td><a asp-controller="Empleados" asp-action="ListadoEmpleados" asp-route-id="@dept.IdDept" class="btn btn-success">Empleados</a></td>
+            </tr>
+        }
+    </tbody>
+
+</table>
+}

@@ -1,0 +1,31 @@
+﻿@model List<Empleado>
+
+    <h1> Listado de empleados</h1>
+    <hr/>
+@if (Model != null)
+{
+    <table class="table-bordered">
+        <thead>
+            <tr>
+                <th> Id </th>
+                <th> Nombre</th>
+                <th> Oficio </th>
+                <th> Salario </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (Empleado emp in Model)
+            {
+                <tr>
+                    <td>@emp.IdEmp</td>
+                    <td>@emp.NombreEmp</td>
+                    <td>@emp.Oficio</td>
+                    <td>@emp.Salario</td>
+                </tr>
+            }
+        </tbody>
+
+    </table>
+}
+<br/>
+<a asp-controller="Departamentos" asp-action="ListadoDepartamentos"  class="btn btn-success">Volver</a>
